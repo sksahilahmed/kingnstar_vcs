@@ -1,0 +1,2 @@
+[console_scripts]
+kingnstar = kingnstar.cli:main
