@@ -44,16 +44,18 @@ class Blob(KingnstarObject):
     def __init__(self, file_path: str):
         self.file_path = file_path
         try:
-            with open(file_path, 'rb') as f:
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 content = f.read()
-            file_hash = hashlib.sha1(content).hexdigest()
+            file_hash = hashlib.sha1(content.encode()).hexdigest()
         except:
+            content = ""
             file_hash = ""
         
         content_data = {
             "type": "blob",
             "path": file_path,
             "hash": file_hash,
+            "content": content,  # Store actual file content!
         }
         super().__init__("blob", content_data)
 

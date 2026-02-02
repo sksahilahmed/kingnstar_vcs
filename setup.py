@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="kingnstar",
-    version="0.1.3",
+    version="0.1.4",
     author="Kingnstar Team",
     author_email="dev@kingnstar.com",
     description="A Git-like Version Control System in Python",
